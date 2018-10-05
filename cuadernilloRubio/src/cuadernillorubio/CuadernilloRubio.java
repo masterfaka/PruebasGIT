@@ -19,9 +19,16 @@ public class CuadernilloRubio {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        String nombre_usuario=EntradaSalida.preguntarNombre(); 
         int opcion=EntradaSalida.mostrarMenu();
+        
         //Menu: 1-Sumas 2-Restas 3-Multiplicaciones 4-Salir
         // el nombre se preguntaria al principio (antes del while de menu(varias operaciones))
+        //nro aciertos, intentos y el name en un txt
+        int aciertos, intentos;
+        aciertos=0;
+        intentos=0;
+        
         while(opcion!=4)
         {
                 //como ya se la operacion, ponemos aki el incrementar de nro_operaciones
@@ -29,8 +36,9 @@ public class CuadernilloRubio {
             {
                         case 1:
                             int numero_operaciones=EntradaSalida.preguntarCuantas();
+                            intentos=intentos+numero_operaciones;
 //Este metodo pregunta cuantas operaciones quiere hacer
-                            String nombre_usuario=EntradaSalida.preguntarNombre();
+                           
                             int operaciones_hechas=0;
                             while(operaciones_hechas<numero_operaciones)
                             {
@@ -40,6 +48,7 @@ public class CuadernilloRubio {
                             int respuesta_usuario=EntradaSalida.mostrarOperacion(o);//acer sout
                             if(respuestaCorrecta(o, respuesta_usuario))
                                 {
+                                    aciertos++;
                                     EntradaSalida.darEnhorabuena(nombre_usuario);
                                 }else{System.out.println("Teekivocaste co");}
                             operaciones_hechas++;
@@ -48,8 +57,9 @@ public class CuadernilloRubio {
                         case 2:
                             //Lo mismo pero con resta
                             numero_operaciones=EntradaSalida.preguntarCuantas();
+                            intentos=intentos+numero_operaciones;
 //Este metodo pregunta cuantas operaciones quiere hacer
-                            nombre_usuario=EntradaSalida.preguntarNombre();
+                         //   nombre_usuario=EntradaSalida.preguntarNombre();
                             operaciones_hechas=0;
                             while(operaciones_hechas<numero_operaciones)
                             {
@@ -59,6 +69,7 @@ public class CuadernilloRubio {
                             int respuesta_usuario=EntradaSalida.mostrarOperacion(o);//acer sout
                             if(respuestaCorrecta(o, respuesta_usuario))
                                 {
+                                        aciertos++;
                                     EntradaSalida.darEnhorabuena(nombre_usuario);
                                 }
                             operaciones_hechas++;
@@ -67,8 +78,9 @@ public class CuadernilloRubio {
                         case 3:
                             //Lo mismo pero con resta
                              numero_operaciones=EntradaSalida.preguntarCuantas();
+                             intentos=intentos+numero_operaciones;
 //Este metodo pregunta cuantas operaciones quiere hacer
-                            nombre_usuario=EntradaSalida.preguntarNombre();
+                        //    nombre_usuario=EntradaSalida.preguntarNombre();
                             operaciones_hechas=0;
                             while(operaciones_hechas<numero_operaciones)
                             {
@@ -78,6 +90,7 @@ public class CuadernilloRubio {
                             int respuesta_usuario=EntradaSalida.mostrarOperacion(o);//acer sout
                             if(respuestaCorrecta(o, respuesta_usuario))
                                 {
+                                    aciertos++;
                                     EntradaSalida.darEnhorabuena(nombre_usuario);
                                 }
                             operaciones_hechas++;
@@ -88,6 +101,9 @@ public class CuadernilloRubio {
             }
             opcion=EntradaSalida.mostrarMenu();
         }
+        //grabar resultados en un txt
+        EntradaSalida.exportarResultados(intentos, aciertos, nombre_usuario);
+        
         
 
     }

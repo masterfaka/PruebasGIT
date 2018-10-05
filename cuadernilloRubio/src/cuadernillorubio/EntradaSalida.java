@@ -5,7 +5,16 @@
  */
 package cuadernillorubio;
 
+
+import java.io.File;
+import java.io.FileNotFoundException;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -28,7 +37,7 @@ class EntradaSalida {
     static int preguntarCuantas() {
         System.out.println("Cuantas operaciones");
         int c=sc.nextInt();
-        sc.nextLine();
+      //  sc.nextLine();
         return c;
     }
 
@@ -49,6 +58,21 @@ class EntradaSalida {
 
     static void darEnhorabuena(String n) {
             System.out.println("Enhorawena "+n+"!!!");
+    }
+
+    static void exportarResultados(int a, int b, String s) {
+        File arch=new File("C:\\IFCT0609\\NetBeans 8.2\\EjerciciosClase\\Clases-Java\\cuadernilloRubio\\resultados.txt");
+               try {
+                   FileWriter fr=new FileWriter(arch, true);
+                   String linea=s+", ha hecho:"+a+" intentos; y "+b+" aciertos.";
+                   fr.write(linea+" \n ");
+                   fr.close();
+                   System.out.println("Bybye done");
+               } catch (FileNotFoundException ex) {
+                   Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (IOException ex) {
+                   Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+               }
     }
     
     
