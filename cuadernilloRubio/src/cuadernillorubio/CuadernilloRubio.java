@@ -21,8 +21,10 @@ public class CuadernilloRubio {
     public static void main(String[] args) {
         int opcion=EntradaSalida.mostrarMenu();
         //Menu: 1-Sumas 2-Restas 3-Multiplicaciones 4-Salir
+        // el nombre se preguntaria al principio (antes del while de menu(varias operaciones))
         while(opcion!=4)
         {
+                //como ya se la operacion, ponemos aki el incrementar de nro_operaciones
             switch (opcion)
             {
                         case 1:

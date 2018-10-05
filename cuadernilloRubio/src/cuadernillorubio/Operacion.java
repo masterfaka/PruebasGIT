@@ -20,7 +20,7 @@ class Operacion{
             o.setS1(a);
              a=(int)(Math.random()*9+1);
              o.setS2(a);
-             o.setSigno('*');
+             o.setSigno('x');
              int auxResultado=o.getS1()*o.getS2();
              o.setResultado(auxResultado); 
         return o;
