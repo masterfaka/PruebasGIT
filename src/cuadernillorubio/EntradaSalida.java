@@ -5,6 +5,7 @@
  */
 package cuadernillorubio;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -19,7 +20,8 @@ public class EntradaSalida {
         System.out.println("1-Sumar");
         System.out.println("2-Restar");
         System.out.println("3-Multiplicar");
-        System.out.println("4-Salir");
+        System.out.println("4-Ver ranking");
+        System.out.println("5-Salir");
         int o=sc.nextInt();
         sc.nextLine();
         return o;
@@ -50,5 +52,14 @@ public class EntradaSalida {
 
     static void darEnhorabuena() {
         System.out.println("Muy bien");
+    }
+
+    static void mostrarPuntuaciones(ArrayList<Puntuacion> lista_puntuaciones) {
+     for (int i=0; i<lista_puntuaciones.size(); i++)
+     {
+        Puntuacion p= lista_puntuaciones.get(i);
+        int puntos=(int)((p.getAciertos()*10/p.getTotales()));
+         System.out.println(p.getNombre()+"........."+puntos);
+     }
     }
 }
