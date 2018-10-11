@@ -21,16 +21,10 @@ class EntradaSalida {
         for (int i = 0; i < opciones.length; i++) {
             System.out.println(opciones[i]);
         }
-        int aux=0;
-        try {
+
         int i=sc.nextInt();
         sc.nextLine();
-        aux=i;        
-        }catch(InputMismatchException e){
-            System.out.println("Introduce un numero entero!");
-        }
-      
-        return aux;
+        return i;
     }
 
     static Accion preguntarAccion() {
