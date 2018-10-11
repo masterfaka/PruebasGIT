@@ -2,12 +2,15 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+para la Puntuacion lo mejor es guardaro todo en una clase
+y lo ke guarda y escribe va en AccesoFichero
  */
 package cuadernillorubio;
 
 /**
  *
  * @author Mañanas
+ * para la Puntuacion lo mejor es guardaro todo en una clase
  */
 public class CuadernilloRubio {
     static boolean respuestaCorrecta(Operacion o, int r){
@@ -29,7 +32,7 @@ public class CuadernilloRubio {
         aciertos=0;
         intentos=0;
         
-        while(opcion!=4)
+        while(opcion!=5)//para salir con la opcion4 hay que agregarla aki con OR
         {
                 //como ya se la operacion, ponemos aki el incrementar de nro_operaciones
             switch (opcion)
@@ -96,13 +99,19 @@ public class CuadernilloRubio {
                             operaciones_hechas++;
                             } 
                             break;
+                        case 4 :
+                                    EntradaSalida.importarResultados();
+                            break;
                         default:System.out.println("Opcion incorrecta([1 -- 4])");
                             break;
-            }
+            }  //grabar resultados en un txt
+            float puntuacion=(aciertos/intentos)*10;
+            EntradaSalida.exportarResultados(intentos, aciertos, nombre_usuario, puntuacion);
             opcion=EntradaSalida.mostrarMenu();
         }
-        //grabar resultados en un txt
-        EntradaSalida.exportarResultados(intentos, aciertos, nombre_usuario);
+      
+      
+       
         
         
 

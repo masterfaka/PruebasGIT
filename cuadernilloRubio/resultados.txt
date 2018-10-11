@@ -1,3 +1,11 @@
 
 asdasd, ha hecho:3 intentos; y 1 aciertos.
 pepe, ha hecho:5 intentos; y 2 aciertos.
+pepe2, ha hecho:5 intentos; y 3 aciertos. 
+ pepe, ha hecho:0 intentos; y 0 aciertos. 
+ pepe, ha hecho:5 intentos; y 3 aciertos; rank=0.0. 
+ jose, ha hecho:2 intentos; y 0 aciertos; rank=0.0. 
+ jose, ha hecho:2 intentos; y 0 aciertos; rank=0.0. 
+ pepe2, ha hecho:3 intentos; y 3 aciertos; rank=10.0. 
+ pepe2, ha hecho:3 intentos; y 3 aciertos; rank=10.0. 
+ 

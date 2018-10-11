@@ -6,8 +6,10 @@
 package cuadernillorubio;
 
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -29,7 +31,8 @@ class EntradaSalida {
         System.out.println("1.Sumar");
         System.out.println("2.Restar");
         System.out.println("3.Multiplicar");
-        System.out.println("4.Salir");
+        System.out.println("4.Mostrar Listado de Jugadores");
+        System.out.println("5.Salir");
         opcion= sc.nextInt();       
         return opcion; 
     }
@@ -60,11 +63,11 @@ class EntradaSalida {
             System.out.println("Enhorawena "+n+"!!!");
     }
 
-    static void exportarResultados(int a, int b, String s) {
+    static void exportarResultados(int a, int b, String s, float r) {//cambiar file csv pork se usa pa esto
         File arch=new File("C:\\IFCT0609\\NetBeans 8.2\\EjerciciosClase\\Clases-Java\\cuadernilloRubio\\resultados.txt");
                try {
                    FileWriter fr=new FileWriter(arch, true);
-                   String linea=s+", ha hecho:"+a+" intentos; y "+b+" aciertos.";
+                   String linea=s+", ha hecho:"+a+" intentos; y "+b+" aciertos; rank="+r+".";
                    fr.write(linea+" \n ");
                    fr.close();
                    System.out.println("Bybye done");
@@ -73,6 +76,25 @@ class EntradaSalida {
                } catch (IOException ex) {
                    Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
                }
+    }
+
+    static void importarResultados() {
+        File arch=new File("C:\\IFCT0609\\NetBeans 8.2\\EjerciciosClase\\Clases-Java\\cuadernilloRubio\\resultados.txt");
+        FileReader fr;
+               try {
+                   fr = new FileReader(arch);
+                   BufferedReader br= new BufferedReader(fr);
+                   String linea=br.readLine();
+                   while (linea!=null) {
+                       System.out.println(linea);
+                      linea= br.readLine();
+                   }
+               } catch (FileNotFoundException ex) {
+                   Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (IOException ex) {
+                   Logger.getLogger(EntradaSalida.class.getName()).log(Level.SEVERE, null, ex);
+               }
+        
     }
     
     
