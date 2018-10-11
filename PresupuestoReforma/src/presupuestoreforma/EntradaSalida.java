@@ -6,6 +6,7 @@
 package presupuestoreforma;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -20,9 +21,16 @@ class EntradaSalida {
         for (int i = 0; i < opciones.length; i++) {
             System.out.println(opciones[i]);
         }
+        int aux=0;
+        try {
         int i=sc.nextInt();
-        sc.nextLine();        
-        return i;
+        sc.nextLine();
+        aux=i;        
+        }catch(InputMismatchException e){
+            System.out.println("Introduce un numero entero!");
+        }
+      
+        return aux;
     }
 
     static Accion preguntarAccion() {
