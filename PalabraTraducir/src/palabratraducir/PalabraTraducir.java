@@ -20,8 +20,21 @@ public class PalabraTraducir {
      * (VER.2) o mejor independientemente del idioma, en la query se usa un OR
      * where ingles="gato" OR espano="gato" . IMPORTANTE: siendo gato la pal
      * introducida
-     *
-     *
+     *ver3
+     * si la palabra metida Equals  palabra ingles else es español
+     * la palabra buscada es la ke se pasa a null
+     * if palabrabuscada.equals(palabra ingles)
+     * 
+     * {
+     * palabraingles=null;
+     * 
+     * }else{
+     *  palabra espnol=null;
+     * 
+     * }
+     *palabra p= new palabra(palabraIngles, palabra espanol);
+     * al mostrar palabra una estara a null, usando esa condicion, al mostrar confirmamos en ke idioma
+     * se ha metido
      */
     public static void main(String[] args) {
         String[] Opciones = {"1Insertar palabra", "2-Traducir", "3-Salir"};
