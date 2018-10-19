@@ -74,6 +74,9 @@ class AccesoBdd {
             ResultSet rs=st.executeQuery(query);
             /*como el while aki sobra,  el rs esta en la posicion 0  tonces hay ke avanzar a posicion1 con rs.next(9 y luego 
             funcionara rs.getstring
+            como rs.next devuelve un boolean se puede usar para comprobar final y no de fallo cuando no hay rsultset. con 
+            if(rs.next())
+            (pasa cuando no esta la palabra buscada)
             
             */
             while (rs.next()) {
