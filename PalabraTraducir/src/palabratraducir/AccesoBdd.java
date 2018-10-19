@@ -57,6 +57,8 @@ class AccesoBdd {
             while (rs.next()) {
                  S= rs.getString("espanol");//cogemos la palabra española cuando traducimos del inggles
             }
+            st.close();
+        c.close();
         } catch (SQLException ex) {
             Logger.getLogger(AccesoBdd.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -73,9 +75,13 @@ class AccesoBdd {
             while (rs.next()) {
                  S= rs.getString("ingles");//cogemos la palabra inglesa cuando traducimos del español
             }
+            st.close();
+        c.close();
         } catch (SQLException ex) {
             Logger.getLogger(AccesoBdd.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
         return S;
     }
     
