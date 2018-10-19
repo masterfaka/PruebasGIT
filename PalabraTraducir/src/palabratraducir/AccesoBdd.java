@@ -72,6 +72,10 @@ class AccesoBdd {
             Connection c= DriverManager.getConnection(url,usuario, password);
             Statement st= c.createStatement();
             ResultSet rs=st.executeQuery(query);
+            /*como el while aki sobra,  el rs esta en la posicion 0  tonces hay ke avanzar a posicion1 con rs.next(9 y luego 
+            funcionara rs.getstring
+            
+            */
             while (rs.next()) {
                  S= rs.getString("ingles");//cogemos la palabra inglesa cuando traducimos del español
             }
