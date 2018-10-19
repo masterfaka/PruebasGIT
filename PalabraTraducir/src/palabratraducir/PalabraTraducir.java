@@ -13,7 +13,11 @@ package palabratraducir;
 public class PalabraTraducir {
 
     /**
-     * @param args the command line arguments
+     Correccion:
+     * 
+     * hey un solo metodo para responder con la palabra traducida, 
+     * donde hay 2 querys, y dependiendo de la opcionIDIOMAintroducida
+     * coje uno u otro.
      */
     public static void main(String[] args) {
         String[] Opciones={"1Insertar palabra","2-Traducir","3-Salir"};
