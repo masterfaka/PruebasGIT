@@ -52,55 +52,5 @@ public class AccesoBdd {
     
     return l;
     }
-/*
-    static void crearTablaPregunta() {
-        try {
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");//cargar driver
-            String query="CREATE TABLE IF NOT EXISTS preguntas\n" +
-"(\n" +
-"enunciado varchar(250),\n" +
-"    resp0 varchar(50),\n" +
-                    "    resp1 varchar(50),\n" +
-                    "    resp2 varchar(50),\n" +
-                    "    resp3 varchar(50),\n" +
-"    correcta int \n" +
-"    \n" +
-");";
-            try {
-                Connection c=DriverManager.getConnection(url, usuario, password);
-                // query="INSERT INTO preguntas VALUES("+p.getPregunta()+" ,"+p.getRespuestas()[0]+" ,"++" ,"++")";
-                Statement st= c.createStatement();
-                  st.executeUpdate(query);
-                  st.close();
-                  c.close();
-                  //con tabla creada procedemos
-            } catch (SQLException ex) {
-                Logger.getLogger(AccesoBdd.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AccesoBdd.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    static void crearTablaRanking() {
-        /*   Class.forName("com.mysql.cj.jdbc.Driver");//cargar driver   no 2 veces
-        String query="CREATE TABLE IF NOT EXISTS Ranking\n" +
-                "(\n" +
-                "nombre varchar(250),\n" +
-                "    puntuacion int" +
-                ");";
-        try {
-            Connection c=DriverManager.getConnection(url, usuario, password);
-            // query="INSERT INTO preguntas VALUES("+p.getPregunta()+" ,"+p.getRespuestas()[0]+" ,"++" ,"++")";
-            Statement st= c.createStatement();
-            st.executeUpdate(query);
-            st.close();
-            c.close();
-            //con tabla creada procedemos
-        } catch (SQLException ex) {
-            Logger.getLogger(AccesoBdd.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-*/
     
  }

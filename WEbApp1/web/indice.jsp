@@ -23,7 +23,7 @@
         <%ArrayList< Provincia> provincias=new ArrayList();
         %>
         <%provincias=AccesoBdd.recuperarProvincias();%>
-        <select>
+        <select name="provincia">
             <%for (int i = 0; i < provincias.size(); i++) {
                     %>
                     <option value=" <%=provincias.get(i).getId()%>">
@@ -32,5 +32,10 @@
             %>
           
          </select>
+            <form action="miServlet" method="POST">
+                <input type="text" name="nombre"/>
+                <input type="text" name="mail"/>
+                <input type="Submit" name="enviar"/>
+            </form>
     </body>
 </html>
