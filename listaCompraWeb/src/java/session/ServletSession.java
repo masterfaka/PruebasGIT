@@ -64,13 +64,28 @@ public class ServletSession extends HttpServlet {
                 //peta pork en el jsp cojemos la listaTotal y habra ke mandarla siempre
             int id= Integer.parseInt(request.getParameter("id"));
             Producto p =AcesoBD.recuperarp(id);//sacamos el producto con esa id de la bd para guardarlo en la listaCompra
-            listaCliente=(ArrayList<Producto>)session.getAttribute("listaC");
+            listaCliente=(ArrayList<Producto>)session.getAttribute("listaC");//asi se recupera la lista anterior para luego actualizarla
             //cada vez ke entra al servlet de redeclara todo, por eso
             //se coge de la sesion ke es la unica var ke perdura
+            //aki modifico el stock
+                //p.setStock(p.getStock()-1);
+            //actualizamos valor en bdd
+            AcesoBD.modificarS(p.getId());
             listaCliente.add(p);//ahora tenemos la lista actualizada y la subimos a la sesion
             session.setAttribute("listaC", listaCliente);
             request.setAttribute("lista", lista);
             request.getRequestDispatcher("listaProductos.jsp").forward(request, response);//enviamos la lista para luego pintarla again? 
+        }else if(accion.equals("comprobar")){
+            String usuario= request.getParameter("usuario");
+            String pass= request.getParameter("contra");
+            boolean OK=AcesoBD.comprobar(usuario, pass);
+            if(OK){//recargamos con la sesion
+             session.setAttribute("usuario", usuario);
+             request.getRequestDispatcher("index.jsp").forward(request, response);
+            }else{//enviar a una pagina de rror
+             //request.getRequestDispatcher("listaProductos.jsp").forward(request, response);
+            }
+        
         }
           
 }

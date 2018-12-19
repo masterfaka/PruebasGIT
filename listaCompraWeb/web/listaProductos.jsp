@@ -19,7 +19,8 @@
             ArrayList<Producto> lista=(ArrayList<Producto>)request.getAttribute("lista");
             ArrayList<Producto> listaC=(ArrayList<Producto>)session.getAttribute("listaC");
              //para ke no pete hay ke setear la lista compra vacia, AL PRINCIPIO        %>
-      <h1>llevas comprados:<%=listaC.size() %></h1>   
+      <h2>llevas comprados:<%=listaC.size() %></h2>   
+      <button class="w3-button w3-green" ><a href="comfirmacompra.jsp">comprar</a></button>
         aki en cada link mandamos como accion comprar para que el servlet sepa
         pintamos con java la tabla    
         <%for (int i = 0; i < lista.size(); i++) {
@@ -28,7 +29,8 @@
           %>
           
           <button class="w3-button w3-blue w3-block"><a href="ServletSession?id=<%=p.getId()%>&accion=comprar"><%=p.getNombre()%></a></button>
-          <%     
+          <%  
+              
             }
         %>
         

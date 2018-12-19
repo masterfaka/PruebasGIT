@@ -76,5 +76,43 @@ class AcesoBD {
         }
        return p;    
     }
+
+    static void modificarS(int id) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");//cargar driver
+            Connection conex=DriverManager.getConnection(url, usuario, password);
+            String query="UPDATE productos SET stock=stock-1 WHERE id="+id+" ";
+            Statement st=conex.createStatement();
+            st.executeUpdate(query);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AcesoBD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AcesoBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+    }
+
+    static boolean comprobar(String user, String pass) {
+             int has_pass=pass.hashCode();
+             boolean f=false;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");//cargar driver 
+             Connection conex=DriverManager.getConnection(url, usuario, password);
+             String query="SELECT * FROM usuarios WHERE nombre='"+user+"'";
+            Statement st=conex.createStatement();
+            ResultSet rs= st.executeQuery(query);
+  
+            if(rs.next()){
+                String contra= rs.getString("contra");
+                int aux_has=contra.hashCode();
+                f= (aux_has==has_pass);//coinciden las contras
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AcesoBD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AcesoBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return f;
+    }
     
 }
