@@ -36,6 +36,7 @@ public class miServlet extends HttpServlet {
         String mail= request.getParameter("mail");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            //aki va codifgo java y se imprime con out.println();
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
