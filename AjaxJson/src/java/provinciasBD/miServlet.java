@@ -44,6 +44,10 @@ public class miServlet extends HttpServlet {
             }
         }
        json+="] }";
+       /******Important*****/
+       //sobran los corchete pork los objetos json estan formados por CLave Valor entre corchetes, sino los obj se separan por comas
+       
+       
       //asi no se reenvia pork estamos todavia en index desde ajax y el servlet no puede autoredirect preguntar luisagain
        request.setAttribute("json", json);
        //a esto solo llega si se accede al servlet por get: pasandole la variable
