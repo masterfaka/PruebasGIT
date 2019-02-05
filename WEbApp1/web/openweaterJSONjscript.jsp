@@ -17,14 +17,14 @@
     </head>
     <body onLoad="cargarOyentes()">
         <h1>Parsear Json</h1>
-        <select name ="ciudad" id="cuidad">
-            <option value="0">Selecciona ciudad</option>
+        <select name ="ciudad" id="cuidad" class="w3-select">
+            <option value="0" disabled selected>Selecciona ciudad</option>
             <option value="Madrid">Madrid</option>
             <option value="mostoles">Mostoles</option>
             <option value="toledo">toledo</option>
             <option value="Valencia">Valencia</option>
         </select>
-        <table id="tabla" class="w3-table w3-centered w3-bordered w3-hoverable" >
+        <table id="tabla" class="w3-table w3-centered w3-bordered w3-hoverable w3-teal" >
             <tr>
                 <th>Ciudad</th><th>Max</tH><th>Min</tH>
             </tr>     

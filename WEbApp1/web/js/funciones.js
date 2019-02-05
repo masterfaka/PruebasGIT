@@ -168,7 +168,7 @@ function mostrarValores(res){
    // var temp=o_json.main.temp;//esta es la media.. no sirve de momnent
      var max= o_json.main.temp_max;
      var min= o_json.main.temp_min;
-     var ciudad=o_json.name;
+     var ciudad=o_json.name; 
      var tabla=document.getElementById("tabla");
      var tbody=document.createElement("tbody");//se adjunta todo al body de la tabla sino peta
      var o_fila=document.createElement("tr");
