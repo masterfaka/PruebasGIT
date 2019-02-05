@@ -26,7 +26,7 @@ $(document).ready(function(){
   $("button").click(function(){
     $.get("https://www.mc30.es/components/com_hotspots/datos/camaras.xml", function(data, status){
       if(status == "success"){//si ha vuelto parseamos; nos llega como documento(xmlJSON) 
-								//RECORDAR EL PARSEO
+		//RECORDAR EL PARSEO
 	 
 		var lista_camaras=tratarXML(data);
 		
@@ -34,23 +34,18 @@ $(document).ready(function(){
 		//alert("Data: " + data + "\nStatus: " + status);
 		crearTabla(lista_camaras);
 		cargarMapas(lista_camaras);
-		
-	  
+
 	  } 
     });
   });
-  
- 
-  
+
 });
 //las func de Js se sacan fuera sino peta!!
 function tratarXML(texto_xml){ //powered by anita powa
     /*var parser = new DOMParser();
-	
 	console.log(texto_xml);
     var xmlDoc = parser.parseFromString(texto_xml,"text/xml"); eesta linea lo convierte a doc xml
 	nos llega directamente como documento xml y se puede acceder direco en vez de xmlDoc.getelement
-	
 	*/
 	var lista_camaras = new Array();
 	var lista_obj_camara = texto_xml.getElementsByTagName("Camara");
@@ -99,8 +94,7 @@ function cargarMapas(lista_camaras) {
 
 </table>
 </body>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2nnTwxI_6v6FgZQ_HYALbkWsL3qhFjT4">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2nnTwxI_6v6FgZQ_HYALbkWsL3qhFjT4">
     </script>
 
 </html>
